@@ -1,0 +1,16 @@
+# Wrangler configuration for Cloudflare Pages (Next.js on Pages)
+
+name = "meeeetup-website"
+
+# Next.js on Pages outputs static assets to .vercel/output/static
+pages_build_output_dir = ".vercel/output/static"
+
+# Use a recent compatibility date and enable Node.js compatibility layer
+compatibility_date = "2025-10-06"
+compatibility_flags = ["nodejs_compat"]
+
+# Add bindings here as needed (KV, D1, R2, Queues, etc.)
+# [vars]
+# EXAMPLE_ENV = "value"
+
+
