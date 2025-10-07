@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 type IconProps = { className?: string };
 
@@ -153,7 +154,13 @@ const ContactSection = () => {
         </div>
 
         <div className="mt-6 flex justify-center">
-          <Button>Contact Us</Button>
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdCeLr0_hbG8WAy4fvTDo39n_iEB7wf00aRjjWB580-OlFo5w/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Contact Us</Button>
+          </Link>
         </div>
       </div>
     </section>

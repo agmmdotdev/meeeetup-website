@@ -41,10 +41,18 @@ const SectionOne = () => {
               顔ひとつで。
             </h1>
             <div className="flex gap-4 justify-center md:justify-start">
-              <Link href="#">
+              <Link
+                href="https://www.meeeetup.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size={"lg"}>View Services</Button>
               </Link>
-              <Link href="#">
+              <Link
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdCeLr0_hbG8WAy4fvTDo39n_iEB7wf00aRjjWB580-OlFo5w/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size={"lg"} variant={"outline"}>
                   Contact Us
                 </Button>
