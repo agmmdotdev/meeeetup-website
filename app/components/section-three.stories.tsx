@@ -1,20 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import "../globals.css";
 import SectionThree from "./section-three";
 
-const meta = {
-  title: "Website/SectionThree",
-  component: SectionThree,
-  parameters: {
-    layout: "fullscreen",
-  },
-  tags: ["autodocs"],
-} satisfies Meta<typeof SectionThree>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
-  render: () => <SectionThree />,
-};
-
-
+export const Default = () => <SectionThree />;

@@ -15,7 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
   title: {
     default: "MeeeetUp — 顔認証で、予約から受付・決済・顧客管理まで",
     template: "%s | MeeeetUp",
@@ -58,7 +60,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MeeeetUp — 顔認証で、予約から受付・決済・顧客管理まで",
-    description: "予約・申込み、受付・本人確認、決済連携、顧客管理をワンストップで提供する MeeeetUp。",
+    description:
+      "予約・申込み、受付・本人確認、決済連携、顧客管理をワンストップで提供する MeeeetUp。",
     images: [
       {
         url: "/hero-banner.webp",
@@ -86,10 +89,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NavBar />
-        {children}
-        <Footer />
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <div className="flex min-h-screen flex-col bg-white">
+          <NavBar />
+          <main className="flex-1 pt-24 ">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

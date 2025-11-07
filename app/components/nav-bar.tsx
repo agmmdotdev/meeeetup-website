@@ -1,10 +1,31 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function NavBar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
+    <header
+      className={`fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "border-b border-white/20 bg-white/70 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        {/* Logo Section */}
         <Link
           href="/"
           className="flex items-center gap-2"
@@ -13,16 +34,21 @@ export default function NavBar() {
           <Image
             src="/meeeetup.png"
             alt="MeeeetUp logo"
-            width={120}
-            height={28}
+            width={140}
+            height={32}
             priority
+            className="h-auto w-32 lg:w-36"
           />
+          <span className="hidden text-sm text-gray-600 lg:inline">
+            Face Recognition Platform
+          </span>
         </Link>
 
+        {/* Center Navigation Links */}
         <nav className="hidden items-center gap-8 md:flex">
           <Link
             href="/"
-            className="text-gray-700 underline underline-offset-4 hover:text-gray-900"
+            className="text-sm font-medium text-blue-600 transition-colors hover:text-blue-700"
           >
             Home
           </Link>
@@ -30,25 +56,33 @@ export default function NavBar() {
             href="https://www.meeeetup.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-700 underline underline-offset-4 hover:text-gray-900"
+            className="text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
           >
-            Service
+            Services
           </Link>
           <Link
-            href="#company"
-            className="text-gray-700 underline underline-offset-4 hover:text-gray-900"
+            href="#recruitment"
+            className="text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
           >
-            Company
+            Recruitment
           </Link>
           <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdCeLr0_hbG8WAy4fvTDo39n_iEB7wf00aRjjWB580-OlFo5w/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl border border-gray-300 px-4 py-1.5 text-gray-700 underline underline-offset-4 hover:bg-gray-50 hover:text-gray-900"
+            href="#news"
+            className="text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
           >
-            Contact Us
+            News
           </Link>
         </nav>
+
+        {/* Contact Us Button */}
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdCeLr0_hbG8WAy4fvTDo39n_iEB7wf00aRjjWB580-OlFo5w/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-md border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 transition-all hover:border-gray-400 hover:bg-gray-50"
+        >
+          Contact Us
+        </Link>
       </div>
     </header>
   );
