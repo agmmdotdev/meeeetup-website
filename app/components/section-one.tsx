@@ -22,7 +22,7 @@ const Button = ({
 
   const variantClasses =
     variant === "outline"
-      ? "border-2 border-gray-800 bg-white hover:bg-gray-50 text-gray-800"
+      ? "border-1 border-gray-800 bg-white hover:bg-gray-50 text-gray-800"
       : "bg-sky-500 text-white hover:bg-sky-600";
 
   return (
