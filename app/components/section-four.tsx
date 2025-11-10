@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { BadgeCheck, CalendarDays, CreditCard, Users } from "lucide-react";
 
 const Highlight = ({
   text,
@@ -40,6 +41,7 @@ type TopicItem = {
 type Topic = {
   title: string;
   items: readonly TopicItem[];
+  Icon: React.ElementType;
 };
 
 const TopicCard: React.FC<{ topic: Topic; className?: string }> = ({
@@ -52,11 +54,18 @@ const TopicCard: React.FC<{ topic: Topic; className?: string }> = ({
         className ?? ""
       }`}
     >
-      <h3 className="text-xl font-semibold text-brand-blue-900">{topic.title}</h3>
+      <div className="flex items-center gap-4">
+        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-blue-500 text-white">
+          <topic.Icon className="h-6 w-6" />
+        </div>
+        <h3 className="text-xl font-semibold text-brand-blue-900">
+          {topic.title}
+        </h3>
+      </div>
       <ul className="mt-4 space-y-3">
         {topic.items.map((item) => (
           <li key={item.text} className="flex items-start gap-3">
-            <span className="mt-2 h-2 w-2 rounded-full bg-brand-blue-500" />
+            <span className="mt-2 h-2 w-2 rounded-full bg-brand-blue-400" />
             <p className="text-base text-gray-700 leading-relaxed">
               <Highlight text={item.text} highlights={item.highlights} />
             </p>
@@ -70,6 +79,7 @@ const TopicCard: React.FC<{ topic: Topic; className?: string }> = ({
 const topics: readonly Topic[] = [
   {
     title: "予約・申込み",
+    Icon: CalendarDays,
     items: [
       {
         text: "予約フォーム入力の手間と時間を短縮し、顧客の離脱を防ぎたい",
@@ -83,6 +93,7 @@ const topics: readonly Topic[] = [
   },
   {
     title: "受付・本人確認",
+    Icon: BadgeCheck,
     items: [
       {
         text: "受付の氏名・予約番号・QRコードの確認作業の手間と人件費を軽減したい",
@@ -104,6 +115,7 @@ const topics: readonly Topic[] = [
   },
   {
     title: "決済・支払い",
+    Icon: CreditCard,
     items: [
       {
         text: "屋外イベント等、決済デバイスを用意しづらい",
@@ -121,6 +133,7 @@ const topics: readonly Topic[] = [
   },
   {
     title: "情報共有・顧客管理",
+    Icon: Users,
     items: [
       {
         text: "チェックイン後、会場に「誰がいるのか」をスタッフ間で共有したい",
