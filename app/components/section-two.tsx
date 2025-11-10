@@ -25,7 +25,7 @@ const SectionTwo: React.FC = () => {
 
           {/* Right: Text content */}
           <div className="md:text-left">
-            <span className="inline-block rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">
+            <span className="inline-block rounded-full bg-brand-blue-100 px-4 py-2 text-sm font-semibold text-brand-blue-700">
               {tag}
             </span>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-5xl">

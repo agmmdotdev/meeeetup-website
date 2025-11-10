@@ -24,7 +24,7 @@ const SectionThree: React.FC = () => {
   return (
     <section id="features" className="bg-slate-50 py-20 sm:py-28">
       <div className="container mx-auto px-4 text-center">
-        <span className="mb-4 inline-block rounded-full bg-sky-200/80 px-4 py-2 text-sm font-semibold text-sky-600">
+        <span className="mb-4 inline-block rounded-full bg-brand-blue-200/80 px-4 py-2 text-sm font-semibold text-brand-blue-600">
           {solutionsText}
         </span>
         <h2 className="text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
@@ -34,7 +34,7 @@ const SectionThree: React.FC = () => {
         <div className="mt-16 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ title, Icon }) => (
             <div key={title} className="flex flex-col items-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-sky-500 text-white">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-blue-500 text-white">
                 <Icon className="h-10 w-10" />
               </div>
               <h3 className="mt-6 text-lg font-semibold text-slate-800">

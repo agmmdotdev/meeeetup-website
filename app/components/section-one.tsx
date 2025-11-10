@@ -23,7 +23,7 @@ const Button = ({
   const variantClasses =
     variant === "outline"
       ? "border-1 border-gray-800 bg-white hover:bg-gray-50 text-gray-800"
-      : "bg-sky-500 text-white hover:bg-sky-600";
+      : "bg-brand-blue-500 text-white hover:bg-brand-blue-600";
 
   return (
     <button className={`${baseClasses} ${sizeClasses} ${variantClasses}`}>
@@ -35,7 +35,7 @@ const Button = ({
 
 const SectionOne = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50 to-sky-100">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-blue-50 to-brand-blue-100">
       {/* Main Hero Content */}
       <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-12 md:pt-20 pb-32 md:pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -47,7 +47,7 @@ const SectionOne = () => {
                 <br />
                 顧客管理まで
               </h2>
-              <h1 className="text-5xl md:text-7xl font-bold text-sky-500 leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold text-brand-blue-500 leading-tight">
                 顔ひとつで。
               </h1>
             </div>
@@ -102,8 +102,8 @@ const SectionOne = () => {
             }
           }
           @keyframes wave1 {
-            0%, 100% { d: path('M0,40L60,35C120,30,240,20,360,25C480,30,600,40,720,35C840,30,960,20,1080,25C1200,30,1320,40,1380,35L1440,30L1440,60L0,60Z'); }
-            50% { d: path('M0,20L60,15C120,10,240,0,360,5C480,10,600,20,720,15C840,10,960,0,1080,5C1200,10,1320,20,1380,15L1440,10L1440,60L0,60Z'); }
+            0%, 100% { d: path('M0,25L60,20C120,15,240,5,360,10C480,15,600,25,720,20C840,15,960,5,1080,10C1200,15,1320,25,1380,20L1440,15L1440,60L0,60Z'); }
+            50% { d: path('M0,10L60,6C120,3,240,0,360,2C480,6,600,16,720,10C840,6,960,0,1080,3C1200,6,1320,16,1380,10L1440,6L1440,60L0,60Z'); }
           }
           .scrolling-text {
             animation: scroll-left 20s linear infinite;
@@ -112,27 +112,26 @@ const SectionOne = () => {
         `}</style>
         {/* Wavy SVG Top Edge - Creates transition from hero to blue section */}
         <svg
-          className="block w-full"
+          className="block w-full text-brand-blue-500 -mb-px"
           viewBox="0 0 1440 60"
           preserveAspectRatio="none"
           style={{ display: "block" }}
         >
           <defs>
             <clipPath id="wavy-clip">
-              <path d="M0,40L60,35C120,30,240,20,360,25C480,30,600,40,720,35C840,30,960,20,1080,25C1200,30,1320,40,1380,35L1440,30L1440,60L0,60Z" />
+              <path d="M0,25L60,20C120,15,240,5,360,10C480,15,600,25,720,20C840,15,960,5,1080,10C1200,15,1320,25,1380,20L1440,15L1440,60L0,60Z" />
             </clipPath>
           </defs>
-          {/* Wave Layer - fills from top with wavy edge */}
           <path
-            d="M0,40L60,35C120,30,240,20,360,25C480,30,600,40,720,35C840,30,960,20,1080,25C1200,30,1320,40,1380,35L1440,30L1440,60L0,60Z"
-            fill="#0ea5e9"
+            d="M0,25L60,20C120,15,240,5,360,10C480,15,600,25,720,20C840,15,960,5,1080,10C1200,15,1320,25,1380,20L1440,15L1440,60L0,60Z"
+            fill="currentColor"
             style={{
               animation: "wave1 8s ease-in-out infinite",
             }}
           />
         </svg>
         {/* Scrolling Text - Inside blue area below wave */}
-        <div className="bg-sky-500 py-6 md:py-8 flex items-center">
+        <div className="bg-brand-blue-500 py-6 md:py-8 flex items-center">
           <div className="scrolling-text text-2xl md:text-2xl font-semibold text-white opacity-90">
             顔認識で変わる、イベント体験　•　人と人をつなぎ、最高のひとときをつくる　•　顔認識で変わる、イベント体験　•　人と人をつなぎ、最高のひとときをつくる　•
           </div>

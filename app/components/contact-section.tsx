@@ -39,6 +39,22 @@ const CalendarIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+const ClockIcon = ({ className }: IconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    aria-hidden="true"
+  >
+    <path
+      fillRule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
 const MapPinIcon = ({ className }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -51,20 +67,24 @@ const MapPinIcon = ({ className }: IconProps) => (
   </svg>
 );
 
-const InfoIcon = ({ className }: IconProps) => (
+const ArrowRightIcon = ({ className }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
+    viewBox="0 0 20 20"
     fill="currentColor"
     className={className}
     aria-hidden="true"
   >
-    <path d="M12 2.25a9.75 9.75 0 1 0 9.75 9.75A9.76 9.76 0 0 0 12 2.25Zm.75 14.25a.75.75 0 0 1-1.5 0v-5a.75.75 0 0 1 1.5 0Zm-.75-7.5a1 1 0 1 1 1-1 1 1 0 0 1-1 1Z" />
+    <path
+      fillRule="evenodd"
+      d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z"
+      clipRule="evenodd"
+    />
   </svg>
 );
 
 const Button = ({ children }: { children: React.ReactNode }) => (
-  <button className="inline-flex items-center justify-center rounded-md bg-sky-500 px-6 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-sky-500/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2">
+  <button className="inline-flex items-center justify-center rounded-md bg-brand-blue-500 px-6 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-brand-blue-500/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-500 focus-visible:ring-offset-2">
     {children}
   </button>
 );
@@ -91,6 +111,29 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-10 md:py-16">
       <div className="container mx-auto max-w-4xl px-4">
+        <div className="mb-12 text-center">
+          <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-800">
+            Company Information
+          </span>
+          <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            MeeeetUp 会社概要
+          </h1>
+          <p className="mt-4 text-lg leading-8 text-gray-600">
+            MeeeetUpに関するお問い合わせは、下記のフォームをご利用ください。
+          </p>
+          <div className="mt-6">
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdCeLr0_hbG8WAy4fvTDo39n_iEB7wf00aRjjWB580-OlFo5w/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-brand-blue-500 px-8 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-brand-blue-500/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-500 focus-visible:ring-offset-2"
+            >
+              Contact Us
+              <ArrowRightIcon className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+
         <div className="rounded-lg border bg-white shadow-sm">
           <div className="border-b p-5 sm:p-6">
             <h2 className="text-lg font-semibold text-gray-800">
@@ -103,7 +146,7 @@ const ContactSection = () => {
                 <BuildingIcon className="h-5 w-5" />
               </IconBox>
               <div>
-                <Label>会社名</Label>
+                <Label>会社名・組織名</Label>
                 <Value>MeeeetUp株式会社</Value>
               </div>
             </Row>
@@ -115,12 +158,12 @@ const ContactSection = () => {
                 </IconBox>
                 <div>
                   <Label>代表取締役</Label>
-                  <Value>髙橋　 一矢</Value>
+                  <Value>髙橋 一矢</Value>
                 </div>
               </Row>
               <Row>
                 <IconBox>
-                  <CalendarIcon className="h-5 w-5" />
+                  <ClockIcon className="h-5 w-5" />
                 </IconBox>
                 <div>
                   <Label>設立年月日</Label>
@@ -140,27 +183,16 @@ const ContactSection = () => {
                 </Value>
               </div>
             </Row>
-
             <Row>
               <IconBox>
-                <InfoIcon className="h-5 w-5" />
+                <BuildingIcon className="h-5 w-5" />
               </IconBox>
               <div>
-                <Label>事業概要</Label>
-                <Value>顔認証を基盤としたIDプラットフォームの提供</Value>
+                <Label>法人番号</Label>
+                <Value>2180001164279</Value>
               </div>
             </Row>
           </div>
-        </div>
-
-        <div className="mt-6 flex justify-center">
-          <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdCeLr0_hbG8WAy4fvTDo39n_iEB7wf00aRjjWB580-OlFo5w/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button>Contact Us</Button>
-          </Link>
         </div>
       </div>
     </section>

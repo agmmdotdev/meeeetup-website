@@ -2,7 +2,7 @@ import "../globals.css";
 import Wave from "./wave";
 
 export const Default = () => (
-  <div className="relative h-96 bg-gradient-to-b from-white via-sky-50 to-sky-100">
+  <div className="relative h-96 bg-gradient-to-b from-white via-brand-blue-50 to-brand-blue-100">
     <div className="h-full flex items-center justify-center">
       <p className="text-gray-700">Content above wave</p>
     </div>
@@ -11,11 +11,11 @@ export const Default = () => (
 );
 
 export const SkyBlue = () => (
-  <div className="relative h-96 bg-gradient-to-b from-white via-sky-50 to-sky-100">
+  <div className="relative h-96 bg-gradient-to-b from-white via-brand-blue-50 to-brand-blue-100">
     <div className="h-full flex items-center justify-center">
       <p className="text-gray-700">Sky blue wave</p>
     </div>
-    <Wave fill="#0099ff" fillOpacity={1} />
+    <Wave fill="#2C74BB" fillOpacity={1} />
   </div>
 );
 
@@ -29,16 +29,16 @@ export const CustomColor = () => (
 );
 
 export const SemiTransparent = () => (
-  <div className="relative h-96 bg-gradient-to-b from-white via-blue-50 to-blue-100">
+  <div className="relative h-96 bg-gradient-to-b from-white via-brand-blue-50 to-brand-blue-100">
     <div className="h-full flex items-center justify-center">
       <p className="text-gray-700">Semi-transparent wave</p>
     </div>
-    <Wave fill="#3b82f6" fillOpacity={0.6} />
+    <Wave fill="#2C74BB" fillOpacity={0.6} />
   </div>
 );
 
 export const TallWave = () => (
-  <div className="relative h-96 bg-gradient-to-b from-white via-sky-50 to-sky-100">
+  <div className="relative h-96 bg-gradient-to-b from-white via-brand-blue-50 to-brand-blue-100">
     <div className="h-full flex items-center justify-center">
       <p className="text-gray-700">Tall wave</p>
     </div>

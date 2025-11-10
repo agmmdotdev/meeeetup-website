@@ -17,7 +17,7 @@ const navLinks: NavLink[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-r from-sky-600 to-cyan-500 text-white">
+    <footer className="bg-gradient-to-r from-brand-blue-600 to-brand-blue-400 text-white">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between gap-6">
           <div className="flex flex-col">

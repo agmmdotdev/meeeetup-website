@@ -21,7 +21,7 @@ const Highlight = ({
     <>
       {parts.map((part, i) =>
         highlights.includes(part) ? (
-          <span key={i} className="text-sky-600">
+          <span key={i} className="text-brand-blue-600">
             {part}
           </span>
         ) : (
@@ -48,15 +48,15 @@ const TopicCard: React.FC<{ topic: Topic; className?: string }> = ({
 }) => {
   return (
     <div
-      className={`rounded-2xl bg-white p-8 shadow-lg shadow-sky-100/90 border border-sky-50 ${
+      className={`rounded-2xl bg-white p-8 shadow-lg shadow-brand-blue-100/90 border border-brand-blue-50 ${
         className ?? ""
       }`}
     >
-      <h3 className="text-xl font-semibold text-sky-900">{topic.title}</h3>
+      <h3 className="text-xl font-semibold text-brand-blue-900">{topic.title}</h3>
       <ul className="mt-4 space-y-3">
         {topic.items.map((item) => (
           <li key={item.text} className="flex items-start gap-3">
-            <span className="mt-2 h-2 w-2 rounded-full bg-sky-500" />
+            <span className="mt-2 h-2 w-2 rounded-full bg-brand-blue-500" />
             <p className="text-base text-gray-700 leading-relaxed">
               <Highlight text={item.text} highlights={item.highlights} />
             </p>
@@ -140,15 +140,15 @@ const topics: readonly Topic[] = [
 
 const SectionFour: React.FC = () => {
   return (
-    <section className="bg-sky-50 py-24 sm:py-32">
+    <section className="bg-brand-blue-50 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="inline-flex items-center rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold text-sky-600">
+          <p className="inline-flex items-center rounded-full bg-brand-blue-100 px-4 py-1 text-xs font-semibold text-brand-blue-600">
             Problems We Solve
           </p>
-          <h2 className="mt-6 text-3xl font-bold tracking-tight text-sky-900 sm:text-4xl">
+          <h2 className="mt-6 text-3xl font-bold tracking-tight text-brand-blue-900 sm:text-4xl">
             多くの現場で共通する課題を、
-            <span className="bg-gradient-to-r from-sky-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-blue-500 to-brand-blue-400 bg-clip-text text-transparent">
               {" "}
               MeeeetUp{" "}
             </span>

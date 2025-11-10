@@ -23,7 +23,7 @@ const VisionSection: React.FC = () => {
         {/* Copy */}
         <div className="mt-10 sm:mt-12">
           <div className="flex items-start gap-4">
-            <div className="mt-1 h-9 w-1 rounded-full bg-sky-500" />
+            <div className="mt-1 h-9 w-1 rounded-full bg-brand-blue-500" />
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
                 すべての人が、顔ひとつで社会とつながる世界を
@@ -39,7 +39,7 @@ const VisionSection: React.FC = () => {
           <div className="mt-8">
             <a
               href="#services"
-              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-sky-300 transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-brand-blue-300 transition hover:bg-brand-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-500 focus-visible:ring-offset-2"
             >
               View Services
               <span aria-hidden="true" className="text-lg">

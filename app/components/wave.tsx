@@ -8,7 +8,7 @@ type WaveProps = {
 };
 
 const Wave = ({
-  fill = "#0099ff",
+  fill = "#2C74BB",
   fillOpacity = 1,
   className = "relative block w-full h-40 md:h-52",
   wrapperClassName = "absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none",
