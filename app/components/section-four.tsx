@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { BadgeCheck, CalendarDays, CreditCard, Users } from "lucide-react";
+import BadgeCheckIcon from "../icons/badge-chcek";
+import { CalendarIcon } from "../icons/calendar";
+import Users from "../icons/users";
+import CreditCardIcon from "../icons/credit-card";
 
 const Highlight = ({
   text,
@@ -55,7 +58,7 @@ const TopicCard: React.FC<{ topic: Topic; className?: string }> = ({
       }`}
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand-blue-500 text-white">
+        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-brand-blue-500 to-sky-400 text-white">
           <topic.Icon className="h-6 w-6" />
         </div>
         <h3 className="text-xl font-semibold text-brand-blue-900">
@@ -79,7 +82,7 @@ const TopicCard: React.FC<{ topic: Topic; className?: string }> = ({
 const topics: readonly Topic[] = [
   {
     title: "予約・申込み",
-    Icon: CalendarDays,
+    Icon: CalendarIcon,
     items: [
       {
         text: "予約フォーム入力の手間と時間を短縮し、顧客の離脱を防ぎたい",
@@ -93,7 +96,7 @@ const topics: readonly Topic[] = [
   },
   {
     title: "受付・本人確認",
-    Icon: BadgeCheck,
+    Icon: BadgeCheckIcon,
     items: [
       {
         text: "受付の氏名・予約番号・QRコードの確認作業の手間と人件費を軽減したい",
@@ -115,7 +118,7 @@ const topics: readonly Topic[] = [
   },
   {
     title: "決済・支払い",
-    Icon: CreditCard,
+    Icon: CreditCardIcon,
     items: [
       {
         text: "屋外イベント等、決済デバイスを用意しづらい",

@@ -1,5 +1,8 @@
-import { BadgeCheck, CalendarDays, CreditCard, Users } from "lucide-react";
 import React from "react";
+import BadgeCheckIcon from "../icons/badge-chcek";
+import { CalendarIcon } from "../icons/calendar";
+import Users from "../icons/users";
+import CreditCardIcon from "../icons/credit-card";
 
 const solutionsText = "Solutions / Key Features";
 const header = "MeeeeetUp 顔認証による";
@@ -14,9 +17,9 @@ type FeatureItem = {
 };
 
 const items: FeatureItem[] = [
-  { title: item1Title, Icon: CalendarDays },
-  { title: item2Title, Icon: BadgeCheck },
-  { title: item3Title, Icon: CreditCard },
+  { title: item1Title, Icon: CalendarIcon },
+  { title: item2Title, Icon: BadgeCheckIcon },
+  { title: item3Title, Icon: CreditCardIcon },
   { title: item4Title, Icon: Users },
 ];
 
@@ -34,7 +37,7 @@ const SectionThree: React.FC = () => {
         <div className="mt-16 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ title, Icon }) => (
             <div key={title} className="flex flex-col items-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-blue-100 text-brand-blue-500">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-brand-blue-500 to-sky-400 text-white">
                 <Icon className="h-10 w-10" />
               </div>
               <h3 className="mt-6 text-lg font-semibold text-slate-800">

@@ -37,7 +37,7 @@ const SectionOne = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-blue-50 to-brand-blue-100">
       {/* Main Hero Content */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-12 md:pt-20 pb-32 md:pb-40">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-12 md:pt-20 pb-48 md:pb-64">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-left space-y-6">
@@ -77,13 +77,13 @@ const SectionOne = () => {
           </div>
 
           {/* Right Content - Devices */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end z-10">
             <Image
               src="/hero-banner.webp"
               alt="MeeeetUp platform on mobile and tablet devices"
-              width={1000}
-              height={1000}
-              className="w-full max-w-2xl"
+              width={1200}
+              height={1200}
+              className="w-full max-w-3xl"
               priority
             />
           </div>
@@ -91,7 +91,7 @@ const SectionOne = () => {
       </div>
 
       {/* Logo Section - Wavy Transition with Text */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden -mt-20 md:-mt-32">
         <style>{`
           @keyframes scroll-left {
             0% {
@@ -102,8 +102,8 @@ const SectionOne = () => {
             }
           }
           @keyframes wave1 {
-            0%, 100% { d: path('M0,25L60,20C120,15,240,5,360,10C480,15,600,25,720,20C840,15,960,5,1080,10C1200,15,1320,25,1380,20L1440,15L1440,60L0,60Z'); }
-            50% { d: path('M0,10L60,6C120,3,240,0,360,2C480,6,600,16,720,10C840,6,960,0,1080,3C1200,6,1320,16,1380,10L1440,6L1440,60L0,60Z'); }
+            0%, 100% { d: path('M0,50L60,40C120,30,240,10,360,20C480,30,600,50,720,40C840,30,960,10,1080,20C1200,30,1320,50,1380,40L1440,30L1440,120L0,120Z'); }
+            50% { d: path('M0,20L60,12C120,6,240,0,360,4C480,12,600,32,720,20C840,12,960,0,1080,6C1200,12,1320,32,1380,20L1440,12L1440,120L0,120Z'); }
           }
           .scrolling-text {
             animation: scroll-left 20s linear infinite;
@@ -113,17 +113,17 @@ const SectionOne = () => {
         {/* Wavy SVG Top Edge - Creates transition from hero to blue section */}
         <svg
           className="block w-full text-brand-blue-500 -mb-px"
-          viewBox="0 0 1440 60"
+          viewBox="0 0 1440 120"
           preserveAspectRatio="none"
           style={{ display: "block" }}
         >
           <defs>
             <clipPath id="wavy-clip">
-              <path d="M0,25L60,20C120,15,240,5,360,10C480,15,600,25,720,20C840,15,960,5,1080,10C1200,15,1320,25,1380,20L1440,15L1440,60L0,60Z" />
+              <path d="M0,50L60,40C120,30,240,10,360,20C480,30,600,50,720,40C840,30,960,10,1080,20C1200,30,1320,50,1380,40L1440,30L1440,120L0,120Z" />
             </clipPath>
           </defs>
           <path
-            d="M0,25L60,20C120,15,240,5,360,10C480,15,600,25,720,20C840,15,960,5,1080,10C1200,15,1320,25,1380,20L1440,15L1440,60L0,60Z"
+            d="M0,50L60,40C120,30,240,10,360,20C480,30,600,50,720,40C840,30,960,10,1080,20C1200,30,1320,50,1380,40L1440,30L1440,120L0,120Z"
             fill="currentColor"
             style={{
               animation: "wave1 8s ease-in-out infinite",
