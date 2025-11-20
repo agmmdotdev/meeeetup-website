@@ -2043,6 +2043,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@payloadcms/live-preview-react@npm:^3.64.0":
+  version: 3.64.0
+  resolution: "@payloadcms/live-preview-react@npm:3.64.0"
+  dependencies:
+    "@payloadcms/live-preview": "npm:3.64.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc-65a56d0e-20241020
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc-65a56d0e-20241020
+  checksum: 10c0/a6315e58781694e67293a1a7f40efcf1ecc5379108ef1068fc3a9460a2dc23f8e19a1652f43a30dd1b8ecb10fb367b53fd04cfa75072772e6e551e6b5d78d2b5
+  languageName: node
+  linkType: hard
+
+"@payloadcms/live-preview@npm:3.64.0":
+  version: 3.64.0
+  resolution: "@payloadcms/live-preview@npm:3.64.0"
+  checksum: 10c0/2fa0f5c2d68d2dada0f05b6c63836b70f9573af8f32adf17c308076982aa43ebd7aeb21e4e7950eec9179e39b5addea630bda29d2068cc2918fbe146a060c663
+  languageName: node
+  linkType: hard
+
 "@payloadcms/next@npm:latest":
   version: 3.64.0
   resolution: "@payloadcms/next@npm:3.64.0"
@@ -3683,6 +3702,13 @@ __metadata:
     "@babel/runtime": "npm:^7.8.7"
     csstype: "npm:^3.0.2"
   checksum: 10c0/f735074d66dd759b36b158fa26e9d00c9388ee0e8c9b16af941c38f014a37fc80782de83afefd621681b19ac0501034b4f1c4a3bff5caa1b8667f0212b5e124c
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^17.2.3":
+  version: 17.2.3
+  resolution: "dotenv@npm:17.2.3"
+  checksum: 10c0/c884403209f713214a1b64d4d1defa4934c2aa5b0002f5a670ae298a51e3c3ad3ba79dfee2f8df49f01ae74290fcd9acdb1ab1d09c7bfb42b539036108bb2ba0
   languageName: node
   linkType: hard
 
@@ -9043,6 +9069,7 @@ __metadata:
   dependencies:
     "@ladle/react": "npm:^5.1.1"
     "@payloadcms/db-postgres": "npm:^3.64.0"
+    "@payloadcms/live-preview-react": "npm:^3.64.0"
     "@payloadcms/next": "npm:latest"
     "@payloadcms/richtext-lexical": "npm:latest"
     "@tailwindcss/typography": "npm:^0.5.15"
@@ -9050,6 +9077,7 @@ __metadata:
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     "@vitejs/plugin-react": "npm:^5.1.0"
+    dotenv: "npm:^17.2.3"
     graphql: "npm:^16.8.1"
     lucide-react: "npm:^0.552.0"
     next: "npm:15.5.4"

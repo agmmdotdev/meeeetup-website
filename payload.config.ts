@@ -6,6 +6,8 @@ import sharp from "sharp";
 
 import { Users } from "./payload/collections/Users";
 import { Media } from "./payload/collections/Media";
+import { Recruitments } from "./payload/collections/Recruitments";
+import { Articles } from "./payload/collections/Articles";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 
 const filename = fileURLToPath(import.meta.url);
@@ -21,6 +23,8 @@ export default buildConfig({
   collections: [
     Users,
     Media,
+    Recruitments,
+    Articles,
     {
       slug: "posts",
       fields: [
