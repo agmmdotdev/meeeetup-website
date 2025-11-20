@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/nav-bar";
-import Footer from "./components/footer";
+import "@payloadcms/next/css";
+import "./(payload)/custom.scss";
+import config from "@payload-config";
+import type { ServerFunctionClient } from "payload";
+import {
+  handleServerFunctions,
+  RootLayout as PayloadRootLayout,
+} from "@payloadcms/next/layouts";
+import { importMap } from "./(payload)/admin/importMap.js";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +20,15 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const serverFunction: ServerFunctionClient = async function (args) {
+  "use server";
+  return handleServerFunctions({
+    ...args,
+    config,
+    importMap,
+  });
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -88,16 +104,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body
+    <PayloadRootLayout
+      config={config}
+      importMap={importMap}
+      serverFunction={serverFunction}
+    >
+      <div
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex min-h-screen flex-col bg-white">
-          <NavBar />
-          <main className="flex-1 pt-24 ">{children}</main>
-          <Footer />
-        </div>
-      </body>
-    </html>
+        {children}
+      </div>
+    </PayloadRootLayout>
   );
 }
