@@ -37,7 +37,7 @@ const SectionOne = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-blue-50 to-brand-blue-100">
       {/* Main Hero Content */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-12 md:pt-20 pb-48 md:pb-64">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-12 md:pt-20 pb-20 md:pb-32 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-left space-y-6">
@@ -91,7 +91,7 @@ const SectionOne = () => {
       </div>
 
       {/* Logo Section - Wavy Transition with Text */}
-      <div className="relative overflow-hidden -mt-20 md:-mt-32">
+      <div className="relative overflow-hidden -mt-32 md:-mt-44">
         <style>{`
           @keyframes scroll-left {
             0% {
