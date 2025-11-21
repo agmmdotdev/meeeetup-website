@@ -3,6 +3,7 @@ import config from "./payload.config";
 import path from "path";
 import fs from "fs";
 import dotenv from "dotenv";
+import type { Recruitment } from "./payload-types";
 
 dotenv.config();
 
@@ -14,9 +15,20 @@ const departments = [
   "カスタマーサポート",
 ];
 const locations = ["日本", "リモート", "東京", "大阪", "福岡"];
-const employmentTypes = ["full_time", "part_time", "contract", "internship"];
+const employmentTypes: Recruitment["employmentType"][] = [
+  "full_time",
+  "part_time",
+  "contract",
+  "internship",
+];
 
-const generateDescription = (title: string) => ({
+type RecruitmentSeedEntry = Omit<
+  Recruitment,
+  "id" | "updatedAt" | "createdAt"
+>;
+type RecruitmentRichText = Recruitment["description"];
+
+const generateDescription = (title: string): RecruitmentRichText => ({
   root: {
     type: "root",
     format: "",
@@ -92,7 +104,7 @@ const seed = async () => {
     return;
   }
 
-  const recruitments = [];
+  const recruitments: RecruitmentSeedEntry[] = [];
 
   for (let i = 1; i <= 10; i++) {
     const title = `Recruitment Position ${i}`;
@@ -103,7 +115,7 @@ const seed = async () => {
     const employmentType =
       employmentTypes[Math.floor(Math.random() * employmentTypes.length)];
 
-    recruitments.push({
+    const job: RecruitmentSeedEntry = {
       title,
       slug,
       department,
@@ -115,7 +127,9 @@ const seed = async () => {
       responsibilities: generateDescription(`${title}の責任`),
       requirements: generateDescription(`${title}の要件`),
       headerImage: headerImageId,
-    });
+    };
+
+    recruitments.push(job);
   }
 
   for (const job of recruitments) {
@@ -135,7 +149,7 @@ const seed = async () => {
 
       await payload.create({
         collection: "recruitments",
-        data: job as any,
+        data: job,
       });
       console.log(`Created recruitment: ${job.title}`);
     } catch (e) {
