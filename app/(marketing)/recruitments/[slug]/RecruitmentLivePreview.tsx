@@ -4,11 +4,12 @@ import { useLivePreview } from "@payloadcms/live-preview-react";
 import { ArrowLeft, Building2, Clock, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { ReactNode, JSX } from "react";
 import type { Media, Recruitment } from "payload-types";
 
-const SITE_URL =
-  (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+).replace(/\/$/, "");
 
 type Props = {
   initialJob: Recruitment;
@@ -63,10 +64,7 @@ function serialize(children: any): ReactNode {
       case "heading": {
         const HeadingTag = node.tag as keyof JSX.IntrinsicElements;
         return (
-          <HeadingTag
-            key={i}
-            className="font-bold text-gray-900 my-4 text-xl"
-          >
+          <HeadingTag key={i} className="font-bold text-gray-900 my-4 text-xl">
             {serialize(node.children)}
           </HeadingTag>
         );
@@ -88,7 +86,9 @@ export default function RecruitmentLivePreview({ initialJob }: Props) {
 
   const job = liveData ?? initialJob;
 
-  const headerImage = isMediaUpload(job.headerImage) ? job.headerImage : undefined;
+  const headerImage = isMediaUpload(job.headerImage)
+    ? job.headerImage
+    : undefined;
   const headerImageUrl = headerImage?.url ?? "";
   const headerImageAlt = headerImage?.alt || job.title;
   const employmentType = job.employmentType?.replace("_", "-") ?? "";
@@ -161,9 +161,7 @@ export default function RecruitmentLivePreview({ initialJob }: Props) {
 
           {job.responsibilities && (
             <section className="border-t border-gray-200 pt-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                責任
-              </h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">責任</h2>
               <div className="prose prose-lg max-w-none text-gray-600">
                 {serialize(job.responsibilities.root?.children)}
               </div>
@@ -185,4 +183,3 @@ export default function RecruitmentLivePreview({ initialJob }: Props) {
     </div>
   );
 }
-
