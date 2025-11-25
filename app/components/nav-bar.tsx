@@ -166,7 +166,7 @@ export default function NavBar() {
             href="/articles"
             className="border-b border-gray-200 py-4 text-base font-medium text-gray-700 transition-colors hover:text-gray-900"
             onClick={closeMobileMenu}
-          >
+            >
             News
           </Link>
           <Link

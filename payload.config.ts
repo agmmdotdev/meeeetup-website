@@ -20,6 +20,12 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    components: {
+      graphics: {
+        Logo: "./app/components/CustomLogo",
+        Icon: "./app/components/CustomIcon",
+      },
+    },
   },
   collections: [
     Users,
@@ -61,6 +67,7 @@ export default buildConfig({
       collections: {
         media: true,
       },
+      signedDownloads: { shouldUseSignedURL: () => true },
       bucket: process.env.S3_BUCKET || "",
       config: {
         credentials: {

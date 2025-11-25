@@ -1,34 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import "@payloadcms/next/css";
-import "./(payload)/custom.scss";
-import config from "@payload-config";
-import type { ServerFunctionClient } from "payload";
-import {
-  handleServerFunctions,
-  RootLayout as PayloadRootLayout,
-} from "@payloadcms/next/layouts";
-import { importMap } from "./(payload)/admin/importMap.js";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const serverFunction: ServerFunctionClient = async function (args) {
-  "use server";
-  return handleServerFunctions({
-    ...args,
-    config,
-    importMap,
-  });
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -103,17 +73,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <PayloadRootLayout
-      config={config}
-      importMap={importMap}
-      serverFunction={serverFunction}
-    >
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </div>
-    </PayloadRootLayout>
-  );
+  return children;
 }
